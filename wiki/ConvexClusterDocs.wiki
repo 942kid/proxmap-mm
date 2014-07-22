@@ -1,0 +1,14 @@
+#summary Usage for convexcluster.
+
+= Introduction =
+
+I have only tested on a Linux platform but there is no reason this C++ program should not run on Mac or Windows with proper adjustments to the makefile. Please contact me if you run into issues on Linux or other platforms.
+
+= Compile =
+
+You will want to first enter the src directory and edit the *common.mk*, which lets the makefile know where your library installations are located. The following libraries are required by convexcluster:
+ * Boost: http://www.boost.org/
+ * GSL: http://www.gnu.org/software/gsl/
+If you have a GPU, please set *use_gpu* equal to 1. You will need to make sure you have the OpenCL library installed and make sure the OpenCL samples work. Please edit the values in *common.mk* for fields suffixed with INC_FLAGS and LIB_FLAGS to reflect where your header files and .so shared objects are installed.
+
+After customization of *common.mk*, you can now run *make*, and a new executable should be generated in the *bin* directory on the same level as *src*.
