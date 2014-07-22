@@ -8,7 +8,7 @@ Please click the Source link, and copy and paste the the svn command for anonymo
 
 = General compilation notes =
 
-You will want to first enter the src directory and edit the *common.mk*, which lets the makefile know where your library installations are located. The following libraries are required by convexcluster:
+You will want to first enter the src directory and edit the *common.mk*, which lets the makefile know where your library installations are located. The following libraries are required by the framework:
  * Boost: http://www.boost.org/
  * GSL: http://www.gnu.org/software/gsl/
 If you have a GPU, please set *use_gpu* equal to 1. You will need to make sure you have the OpenCL library installed and make sure the OpenCL samples work. Please edit the values in *common.mk* for fields suffixed with INC_FLAGS and LIB_FLAGS to reflect where your header files and .so shared objects are installed.
