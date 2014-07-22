@@ -1,4 +1,4 @@
-#summary Usage for convexcluster.
+#summary Usage for _convexcluster_.
 
 = Introduction =
 
@@ -6,9 +6,8 @@ I have only tested on a Linux platform but there is no reason this C++ program s
 
 = Compile =
 
-You will want to first enter the src directory and edit the *common.mk*, which lets the makefile know where your library installations are located. The following libraries are required by convexcluster:
- * Boost: http://www.boost.org/
- * GSL: http://www.gnu.org/software/gsl/
-If you have a GPU, please set *use_gpu* equal to 1. You will need to make sure you have the OpenCL library installed and make sure the OpenCL samples work. Please edit the values in *common.mk* for fields suffixed with INC_FLAGS and LIB_FLAGS to reflect where your header files and .so shared objects are installed.
+Please follow the general instructions found in Intro. We also included some utility functions for generating the k nearest neighbor weight file, so if you need to compile these, this can be done with commands *make distance* and *make knn_weights* from the *src/convex_clustering* directory.
 
-After customization of *common.mk*, you can now run *make*, and a new executable should be generated in the *bin* directory on the same level as *src*.
+= Running examples =
+
+This section should get you up and running quickly, using Fisher's famous Iris data set, downloaded from the UCI machine learning repository. Enter the *examples* directory. You can edit the *run_iris.sh* file if you wish to edit the weighting parameters _k_ and _phi_. Running _convexcluster_ simply entails executing *./run_iris.sh*. We also include a plotting utility for visualizing the cluster results on the first two principal components of the data. You will need *R* and the R libary *ggplot2* in order for this script to run. Execute *./plot_iris.sh* to run the script, and open *iris_projection.pdf* in your favorite PDF viewer.
