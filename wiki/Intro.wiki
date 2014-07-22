@@ -1,0 +1,11 @@
+#summary Proximal Distance MM framework for optimization.
+
+= Introduction =
+
+This code-repository hosts several projects that make use of the Proximal Distance MM framework for optimization. Current algorithms include implementations for solving convex clustering and L0 regression. We will post documentation on usage on this Wiki, and any new updates, patches, etc as well.
+
+Please click the Source link, and copy and paste the the svn command for anonymous check out to get the latest source for building. See below for further usage details on particular projects.
+
+= Convex Clustering =
+
+In the life sciences, hierarchical clustering has achieved a position of pre-eminence due to its ability to capture multiple levels of data granularity. Despite its merits, hierarchical clustering is greedy by nature and often produces spurious clusters, particularly in the presence of substantial noise. A relatively new alternative is known as convex clustering. Although convex clustering is more computationally demanding, it enjoys several advantages over hierarchical clustering and other traditional methods of clustering. Convex clustering delivers a uniquely defined clustering path that partially obviates the need for choosing an optimal number of clusters. Along the path small clusters gradually coalesce to form larger clusters. Clustering can be guided by external information through appropriately defined similarity weights. Documentation for our convex clustering can be found at ConvexClusterDocs.
