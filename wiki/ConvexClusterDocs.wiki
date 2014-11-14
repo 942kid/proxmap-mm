@@ -10,9 +10,36 @@ Please follow the general instructions found in Intro. We also included some uti
 
 = Running examples =
 
-This section should get you up and running quickly, using Fisher's famous Iris data set, downloaded from the UCI machine learning repository. Enter the *examples* directory. You can edit the *run_iris.sh* file if you wish to edit the weighting parameters _k_ and _phi_. Running _convexcluster_ simply entails executing *./run_iris.sh*. We also include a plotting utility for visualizing the cluster results on the first two principal components of the data. You will need *R* and the R libary *ggplot2* in order for this script to run. Execute *./plot_iris.sh* to run the script, and open *iris_projection.pdf* in your favorite PDF viewer.
+This section should get you up and running quickly, using Fisher's famous Iris data set, downloaded from the UCI machine learning repository. Enter the *examples/convex_clustering* directory.
+{{{
+[garyc@ssb202q-1 trunk]$ cd examples/convex_clustering/
+[garyc@ssb202q-1 convex_clustering]$ ls
+config.iris           iris.clusters        iris.stderr   plot_path.r
+config.iris.template  iris.labels          iris.txt      run_iris.sh
+iris_clusters         iris_projection.pdf  plot_iris.sh  weights.ph4.k5
+}}}
+ You can edit the *run_iris.sh* file if you wish to edit the weighting parameters _k_ and _phi_.
+{{{
+[garyc@ssb202q-1 convex_clustering]$ head run_iris.sh 
+#!/bin/bash
 
-= Configuring _convexcluster_ =
+# k nearest neighbors
+k=5
+# soft thresholding parameters
+phi=4
+
+datafile='iris.txt'
+weightfile=weights.ph$phi.k$k
+n=`cat $datafile|wc -l`
+}}} 
+Running _convexcluster_ simply entails executing *./run_iris.sh*. 
+{{{
+[garyc@ssb202q-1 convex_clustering]$ ./run_iris.sh 
+Weight range is 0.919739 to 0.999204
+}}}
+We also include a plotting utility to conveniently view the cluster results on the first two principal components of the data. You will need *R* and the R libary *ggplot2* in order for this script to run. Execute *./plot_iris.sh* to run the script, and open *iris_projection.pdf* in your favorite PDF viewer.
+
+= Customizing _convexcluster_ =
 
 _convexcluster_ reads in input parameters from a configuration file that is specified as the second argument (see the example *./run_iris.sh* file). The program requires only a handful of input parameters to run. There are also several optional tuning parameters, but they are set to reasonable defaults internally, and overridden only when they are present in the configuration file. The following are required parameters:
 
