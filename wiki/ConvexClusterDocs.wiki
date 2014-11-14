@@ -37,9 +37,11 @@ Running _convexcluster_ simply entails executing *./run_iris.sh*.
 [garyc@ssb202q-1 convex_clustering]$ ./run_iris.sh 
 Weight range is 0.919739 to 0.999204
 }}}
-We also include a plotting utility to conveniently view the cluster results on the first two principal components of the data. You will need *R* and the R libary *ggplot2* in order for this script to run. Execute *./plot_iris.sh* to run the script, and open *iris_projection.pdf* in your favorite PDF viewer.
+We also include a plotting utility to conveniently view the cluster results on the first two principal components of the data. You will need *R* and the R libary *ggplot2* in order for this script to run. Execute *./plot_iris.sh* to run the script, and open *iris_projection.pdf* in your favorite PDF viewer. You should be able to see the cluster path depicted as:
 
-= Customizing _convexcluster_ =
+https://proxmap-mm.googlecode.com/svn/trunk/examples/convex_clustering/iris_projection.png
+
+= Customizing _convexcluster_ (optional)=
 
 _convexcluster_ reads in input parameters from a configuration file that is specified as the second argument (see the example *./run_iris.sh* file). The program requires only a handful of input parameters to run. There are also several optional tuning parameters, but they are set to reasonable defaults internally, and overridden only when they are present in the configuration file. The following are required parameters:
 
