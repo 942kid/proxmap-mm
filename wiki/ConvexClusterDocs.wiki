@@ -7,6 +7,13 @@ I have only tested on a Linux platform but there is no reason this C++ program s
 = Compile =
 
 Please follow the general instructions found in Intro. We also included some utility functions for generating the k nearest neighbor weight file, so if you need to compile these, this can be done with commands *make distance* and *make knn_weights* from the *src/convex_clustering* directory.
+{{{
+[garyc@ssb202q-1 trunk]$ cd src/convex_clustering/
+[garyc@ssb202q-1 convex_clustering]$ make distance
+mpic++ -o ../../bin/distance   -DUSE_MPI distance.cpp
+[garyc@ssb202q-1 convex_clustering]$ make knn_weights 
+mpic++ -o ../../bin/knn_weights   -DUSE_MPI knn_weights.cpp
+}}}
 
 = Running examples =
 
